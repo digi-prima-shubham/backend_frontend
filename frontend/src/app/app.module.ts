@@ -13,6 +13,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { ReactiveFormsModule } from '@angular/forms';
 import { PagenotfounfdComponent } from './component/pagenotfounfd/pagenotfounfd.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     FlexLayoutModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

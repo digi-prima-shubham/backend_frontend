@@ -1,10 +1,11 @@
 const router = require("express").Router();
-const { body, validationResult } = require('express-validator');
 module.exports = (app) => {
+    const { body, validationResult } = require('express-validator');
+    const form = require('../form/user_validation');
     const users = require('../controllers/users.controller');
 
     // Create new Collection
-    app.post('/api/v1/userReg', users.createUsers);
+    app.post('/api/v1/userReg', form.userRegistration, users.createUsers);
 
     // Get users
     app.get('/api/v1/getUser', users.getUsers);

@@ -14,11 +14,6 @@ const UserSchema = mongoose.Schema({
     contact_no: Number,
     mobile_no: String,
     user_name: String,
-    org_id: String,
-    unit_id: Array,
-    patient_id: String,
-    doctor_id: String,
-    permissions: Array,
     gender: String,
     pwd_changed_at: Date,
     profile_image: String,
@@ -26,18 +21,11 @@ const UserSchema = mongoose.Schema({
         type: String,
         unique: false
     },
-    email_status: {
-        type: String,
-        enum: ['LINK_SENT', 'VERIFIED'],
-        default: 'LINK_SENT'
-    },
-    temp_password: String,
-    temp_salt: String,
     password: String,
     salt: String,
     status: {
         type: String,
-        default: "A"
+        default: "Inactive"
     },
     updated_by: String,
     created_by: String,
