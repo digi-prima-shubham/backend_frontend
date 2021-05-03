@@ -1,0 +1,61 @@
+<div fxLayout="row" class="mainDiv">
+    <!-- <img class="imgTag" src="../../../assets/loginImage/106488-black-and-blue-abstract.jpg" alt="" srcset=""> -->
+
+    <div class="registDiv" fxLayout="column" fxFlex="70" fxLayoutAlign="center center">
+        <img class="imgTag" src="../../../assets/loginImage/auth-bg.svg" alt="" srcset="">
+    </div>
+
+    <div fxLayout="column" fxFlex="30" fxLayoutAlign="center center" class="loginDiv">
+        <div class="loginDiv1">
+            <div class="inputLogDiv">
+                <mat-label class="inputLog">Log <span>In</span></mat-label>
+            </div>
+            <div class="TextChange">
+                <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
+                    <mat-form-field class="mtcls" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="mtLogin" type="submit"
+                        value="Submit">Login</button>
+                </form>
+                <br>
+                <button mat-raised-button color="primary" class="mtLogin" (click)="registerFunc()">Regitration</button>
+                <div fxLayoutAlign="center center" class="oMatLogin">
+                    <mat-label class="otherMtLogin">Other Login</mat-label>
+                </div>
+                <div fxLayoutAlign="center center" class="divOlogin">
+                    <div fxLayout="column" fxFlex="25" fxLayoutAlign="">
+                        <a (click)="signInGoogle()">
+                            <img class="gimg btn btn-social-icon-btn-google mx-1"
+                                src="../../../assets/loginImage/other_login/google.png" alt="Google.png">
+                        </a>
+                    </div>
+                    <div fxLayout="column" fxFlex="25" fxLayoutAlign="">
+                        <a href="/auth/google">
+                            <img class="gimg" src="../../../assets/loginImage/other_login/github.png" alt="github.png">
+                        </a>
+                    </div>
+                    <div fxLayout="column" fxFlex="25" fxLayoutAlign="">
+                        <a href="/auth/facebook">
+                            <img class="gimg" src="../../../assets/loginImage/other_login/facebook.png"
+                                alt="facebook.png">
+                        </a>
+                    </div>
+                    <div fxLayout="column" fxFlex="25" fxLayoutAlign="">
+                        <a href="/auth/twitter">
+                            <img class="gimg" src="../../../assets/loginImage/other_login/twitter.png"
+                                alt="twitter.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-home [sendToHome]="myData"></app-home> -->

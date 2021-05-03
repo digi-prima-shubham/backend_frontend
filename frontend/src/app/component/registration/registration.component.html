@@ -1,47 +1,57 @@
-<!-- <div fxLayout="column"> -->
-    <div fxLayout="column" fxLayoutAlign="center center">
-        <form [formGroup]="registerform" (ngSubmit)="onSubmit();" fxLayout="column">
-            <mat-form-field appearance="fill">
-                <mat-label>firstname</mat-label>
-                <input matInput  formControlName="firstname">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>lastname</mat-label>
-                <input matInput  formControlName="lastname">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>salutation</mat-label>
-                <input matInput  formControlName="salutation">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>contact_no</mat-label>
-                <input matInput  formControlName="contact_no">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>mobile_no</mat-label>
-                <input matInput  formControlName="mobile_no">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>user_name</mat-label>
-                <input matInput  formControlName="user_name">
-            </mat-form-field>
-            <button mat-button color="primary" type="submit" value="Submit">Submit</button>
-        </form>
-    </div>
-<!-- </div> -->
+<!-- <app-login></app-login> -->
 
-
-
-<!-- <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
-    <div fxLayout="row">
-        <div fxLayout="column" fxLayoutAlign="center">
-            <label>First Name:<input type="text" formControlName="firstname"></label>
-            <label>Last Name:<input type="text" formControlName="lastname"></label>
-            <label>salutation:<input type="text" formControlName="salutation"></label>
-            <label>contact_no:<input type="text" formControlName="contact_no"></label>
-            <label>mobile_no:<input type="text" formControlName="mobile_no"></label>
-            <label>user_name:<input type="text" formControlName="user_name"></label>
-            <button type="submit" value="Submit">Submit</button>
+<div fxLayout="row">
+    <div class="registDiv" fxLayout="column" fxFlex="50" fxLayoutAlign="center center">
+        <div>
+            <form [formGroup]="registerform" (ngSubmit)="onSubmit();" fxLayout="column">
+                <mat-form-field appearance="fill">
+                    <mat-label>firstname</mat-label>
+                    <input matInput formControlName="firstname">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>lastname</mat-label>
+                    <input matInput formControlName="lastname">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>salutation</mat-label>
+                    <input matInput formControlName="salutation">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>contact_no</mat-label>
+                    <input matInput formControlName="contact_no">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>mobile_no</mat-label>
+                    <input matInput formControlName="mobile_no">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>user_name</mat-label>
+                    <input matInput formControlName="user_name">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                </mat-form-field>
+                <button mat-button color="primary" type="submit" value="Submit">Registration</button>
+            </form>
         </div>
     </div>
-</form> -->
+
+    <!-- <div fxLayout="column" fxFlex="50" fxLayoutAlign="center center">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
+            <mat-form-field class="mtcls" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <button mat-button color="primary" type="submit" value="Submit">Login</button>
+        </form>
+    </div> -->
+</div>

@@ -20,14 +20,26 @@ export class RegistrationComponent implements OnInit {
     salutation: new FormControl(''),
     contact_no: new FormControl(''),
     mobile_no: new FormControl(''),
-    user_name: new FormControl('')
+    user_name: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
   })
+
+  // loginForm = new FormGroup({
+  //   email: new FormControl(''),
+  //   password: new FormControl('')
+  // })
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
     // console.log(this.registerform.value);
     this.UserServiceService.add_users(this.registerform.value).pipe(first()).subscribe((data: any) => {
       console.log("Checking When Add data", data);
+      this.snackBar.open(data.message, 'Ok', {
+        duration: 2000,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition
+      })
     },
       err => {
         this.snackBar.open(err.error.message, 'Ok', {
@@ -38,16 +50,36 @@ export class RegistrationComponent implements OnInit {
         console.log("having some error", err.error);
       }
     )
-    this._document.defaultView.location.reload();
-    // this.ngOnInit();
+    // this._document.defaultView.location.reload();
   }
+
+  // login() {
+  //   this.UserServiceService.getUsrById(this.loginForm.value).pipe(first()).subscribe((data: any) => {
+  //     console.log("Checking login data", data);
+  //     this.snackBar.open(data.message, 'Ok', {
+  //       duration: 2000,
+  //       horizontalPosition: this.horizontalPosition,
+  //       verticalPosition: this.verticalPosition
+  //     })
+  //   },
+  //     err => {
+  //       this.snackBar.open(err.error.message, 'Ok', {
+  //         duration: 2000,
+  //         horizontalPosition: this.horizontalPosition,
+  //         verticalPosition: this.verticalPosition
+  //       })
+  //       console.log("having some error", err.error);
+  //     }
+  //   )
+  // }
+
   constructor(private UserServiceService: UserServiceService,
     private snackBar: MatSnackBar,
     @Inject(DOCUMENT) private _document: Document) { }
 
   ngOnInit(): void {
-    this.UserServiceService.show_users().pipe(first()).subscribe((data: any) => {
-      // console.log("checking data", data);
-    })
+    // this.UserServiceService.show_users().pipe(first()).subscribe((data: any) => {
+    //   // console.log("checking data", data);
+    // })
   }
 }

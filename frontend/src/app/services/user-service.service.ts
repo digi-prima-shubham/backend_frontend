@@ -18,4 +18,8 @@ export class UserServiceService {
   add_users(data: any) {
     return this.http.post(`${API_URL}api/v1/userReg`, data)
   }
+
+  getUsrById(data: any) {
+    return this.http.post(`${API_URL}api/v1/userLogin`, data)
+  }
 }

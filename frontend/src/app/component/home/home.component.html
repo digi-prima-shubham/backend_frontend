@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <!-- <img *ngIf="df" class="photoImg" src="{{ googleData.photoUrl }}" alt=""> -->
+        <!-- <p *ngIf="df">{{googleData.name}}</p> -->
+        <!-- <p *ngIf="sf">{{ userEmail }}</p> -->
+        <span class="example-spacer"></span>
+        <button mat-button>Menu1</button>
+        <button mat-button>Menu2</button>
+        <button class="btn btn-social-icon-btn-google mx-1" (click)="signOut()" mat-button>LogOut</button>
+        <mat-icon (click)="settingFunc()">settings</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -10,5 +10,8 @@ module.exports = (app) => {
     // Get users
     app.get('/api/v1/getUser', users.getUsers);
 
+    // Get User By Id
+    app.post('/api/v1/userLogin', users.userLogin);
+
 }
 module.exports.user_setting = router;

@@ -2,10 +2,10 @@ const { userConnection } = require("../../config/database.config");
 const mongoose = require("mongoose");
 var conn = mongoose.createConnection(
     userConnection, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false,
-    });
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+});
 
 const UserSchema = mongoose.Schema({
     firstname: String,
@@ -34,6 +34,7 @@ const UserSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
+    token: String,
     role: {
         type: String,
         enum: ['patient', 'superadmin', 'masteradmin', 'orgadmin', 'unitadmin', 'doctor'],
