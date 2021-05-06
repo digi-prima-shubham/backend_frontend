@@ -1,1 +1,59 @@
-<p>home-setting works!</p>
+<div class="usrEdit">
+    <p class="usrPTag">User <span>Edit</span> </p>
+</div>
+
+<form name="requestForm" (ngSubmit)="submitForm()" [formGroup]="registerform">
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="4 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="user_name">
+                <ly-label>Username</ly-label>
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="4 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="firstname">
+                <ly-label>First Name</ly-label>
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="4 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" value="Last Name" formControlName="lastname">
+                <ly-label>Last Name</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="email">
+                <ly-label>Email</ly-label>
+
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="mobile_no">
+                <ly-label>Mobile</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text">
+                <ly-label>Old Password</ly-label>
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="password">
+                <ly-label>Change Password</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <button type="submit" ly-button raised bg="primary">Submit</button>
+</form>

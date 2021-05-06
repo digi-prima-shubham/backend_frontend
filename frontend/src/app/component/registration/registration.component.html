@@ -1,57 +1,68 @@
-<!-- <app-login></app-login> -->
-
-<div fxLayout="row">
-    <div class="registDiv" fxLayout="column" fxFlex="50" fxLayoutAlign="center center">
-        <div>
-            <form [formGroup]="registerform" (ngSubmit)="onSubmit();" fxLayout="column">
-                <mat-form-field appearance="fill">
-                    <mat-label>firstname</mat-label>
-                    <input matInput formControlName="firstname">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>lastname</mat-label>
-                    <input matInput formControlName="lastname">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>salutation</mat-label>
-                    <input matInput formControlName="salutation">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>contact_no</mat-label>
-                    <input matInput formControlName="contact_no">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>mobile_no</mat-label>
-                    <input matInput formControlName="mobile_no">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>user_name</mat-label>
-                    <input matInput formControlName="user_name">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input matInput formControlName="email">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password" formControlName="password">
-                </mat-form-field>
-                <button mat-button color="primary" type="submit" value="Submit">Registration</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- <div fxLayout="column" fxFlex="50" fxLayoutAlign="center center">
-        <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
-            <mat-form-field class="mtcls" appearance="fill">
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password">
-            </mat-form-field>
-            <button mat-button color="primary" type="submit" value="Submit">Login</button>
-        </form>
-    </div> -->
+<div class="usrEdit" fxLayoutAlign="center center">
+    <p class="usrPTag">User <span>Registration</span> </p>
 </div>
+<form name="requestForm" [formGroup]="registerform" (ngSubmit)="onSubmit();">
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="firstname">
+                <ly-label>First Name</ly-label>
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="lastname">
+                <ly-label>Last Name</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" value="Last Name" formControlName="salutation">
+                <ly-label>Salutation</ly-label>
+            </ly-field>
+        </ly-grid>
+
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" value="Last Name" formControlName="user_name">
+                <ly-label>User Name</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="email">
+                <ly-label>Email</ly-label>
+
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="contact_no">
+                <ly-label>Contact No</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <ly-grid container [spacing]="16">
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="text" formControlName="mobile_no">
+                <ly-label>Mobile</ly-label>
+            </ly-field>
+        </ly-grid>
+        <ly-grid item col="6 6@XSmall@Small">
+            <ly-field appearance="outlined" [lyWidth]="1">
+                <input lyNativeControl type="password" formControlName="password">
+                <ly-label>Password</ly-label>
+            </ly-field>
+        </ly-grid>
+    </ly-grid>
+
+    <button type="submit" ly-button raised bg="primary">Registration</button>
+</form>

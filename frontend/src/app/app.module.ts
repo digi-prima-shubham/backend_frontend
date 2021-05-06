@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,9 +23,14 @@ import { HomeSettingComponent } from './component/home-setting/home-setting.comp
 import { MatDialogModule } from "@angular/material/dialog";
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
-import { PpComponent } from './pp/pp.component';
-
-
+import { LyHammerGestureConfig, LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from '@alyle/ui';
+import { MinimaLight } from '@alyle/ui/themes/minima';
+import { LyButtonModule } from '@alyle/ui/button';
+import { LyToolbarModule } from '@alyle/ui/toolbar';
+import { LyImageCropperModule } from '@alyle/ui/image-cropper';
+import { LyFieldModule } from '@alyle/ui/field';
+import { LyGridModule } from '@alyle/ui/grid';
+import { LyIconModule } from '@alyle/ui/icon';
 
 
 
@@ -37,7 +42,6 @@ import { PpComponent } from './pp/pp.component';
     LoginComponent,
     HomeComponent,
     HomeSettingComponent,
-    PpComponent
   ],
   imports: [
     BrowserModule,
@@ -56,28 +60,16 @@ import { PpComponent } from './pp/pp.component';
     MatToolbarModule,
     MatIconModule,
     MatDialogModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HammerModule,
+    LyButtonModule,
+    LyToolbarModule,
+    LyImageCropperModule,
+    LyFieldModule,
+    LyGridModule,
+    LyIconModule
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '618597045510-sed90rinp0kuqqdqac70snbcg7270i4m.apps.googleusercontent.com'
-            )
-          }
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('clientId')
-          // }
-        ]
-      } as SocialAuthServiceConfig,
-    }
-  ],
+  providers: [{ provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig }, StyleRenderer, LyTheme2, { provide: LY_THEME_NAME, useValue: 'minima-light' }, { provide: LY_THEME, useClass: MinimaLight, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

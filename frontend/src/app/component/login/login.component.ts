@@ -7,7 +7,6 @@ import { Router } from "@angular/router";
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from "@angular/material/snack-bar";
 import { MatDialog } from '@angular/material/dialog';
 import { RegistrationComponent } from "../registration/registration.component";
-import { SocialAuthService, SocialUser, GoogleLoginProvider } from "angularx-social-login";
 
 
 @Component({
@@ -16,7 +15,6 @@ import { SocialAuthService, SocialUser, GoogleLoginProvider } from "angularx-soc
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user: SocialUser;
   horizontalPosition: MatSnackBarHorizontalPosition = 'left';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -29,7 +27,6 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private snackBar: MatSnackBar,
     private dialog: MatDialog,
-    private authService: SocialAuthService,
     @Inject(DOCUMENT) private _document: Document) { }
 
   ngOnInit(): void {
@@ -37,17 +34,10 @@ export class LoginComponent implements OnInit {
   }
 
   signInGoogle(): any {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      localStorage.setItem("googlLoginData", JSON.stringify(this.user))
-      this.router.navigate(['home'])
 
-    })
   }
 
   signOut(): any {
-    this.authService.signOut();
   }
 
   login() {

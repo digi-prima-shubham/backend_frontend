@@ -1,12 +1,29 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <!-- <img *ngIf="df" class="photoImg" src="{{ googleData.photoUrl }}" alt=""> -->
-        <!-- <p *ngIf="df">{{googleData.name}}</p> -->
-        <!-- <p *ngIf="sf">{{ userEmail }}</p> -->
-        <span class="example-spacer"></span>
-        <button mat-button>Menu1</button>
-        <button mat-button>Menu2</button>
-        <button class="btn btn-social-icon-btn-google mx-1" (click)="signOut()" mat-button>LogOut</button>
+        <h4 class="example-spacer">{{ userData.email }}</h4>
+        <button mat-button>Projects</button>
+        <button mat-button>What I Do</button>
         <mat-icon (click)="settingFunc()">settings</mat-icon>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<div fxLayout="row">
+    <div class="grid1" fxFlex="50">
+        <img class="captimg" src="../../../assets/home_page/captian.jpg" alt="">
+    </div>
+    <div class="grid2" fxFlex="50">
+        <h2 fxLayoutAlign="center center">Captain America</h2>
+        <p class="captText">This is Captain America</p>
+    </div>
+</div>
+
+<div fxLayout="row">
+    <div class="grid2" fxFlex="50"></div>
+    <div class="grid1" fxFlex="50"></div>
+</div>
+
+
+<div fxLayout="row">
+    <div class="grid1" fxFlex="50"></div>
+    <div class="grid2" fxFlex="50"></div>
+</div>

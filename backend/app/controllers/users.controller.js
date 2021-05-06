@@ -105,6 +105,42 @@ exports.userLogin = async (req, res) => {
     }
 }
 
+exports.changeDetail = async (req, res) => {
+    let isReqValid = await validateRequest(req, res)
+    if (!isReqValid) {
+        return;
+    }
+    try {
+        console.log("dsffdsfsdf", req.params._id);
+        Users.findByIdAndUpdate(req.params._id, {
+            mobile_no: req.body.mobile_no,
+            password: req.body.password
+        }, {
+            new: true
+        }).then((data) => {
+            if (!data) {
+                return res.status(401).json({
+                    status: "failure",
+                    message: 'User Not Update'
+                })
+            }
+            else {
+                console.log("dasfasdfdsfdsfa", data);
+                return res.status(200).json({
+                    status: "success",
+                    message: 'User Updated',
+                    data,
+                })
+            }
+        })
+    }
+    catch (error) {
+        throw new Error(error);
+
+    }
+}
+
+
 
 function validateRequest(req, res) {
     const errors = validationResult(req);

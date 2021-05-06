@@ -13,5 +13,7 @@ module.exports = (app) => {
     // Get User By Id
     app.post('/api/v1/userLogin', users.userLogin);
 
+    app.put('/api/v1/userDetailChange/:_id', users.changeDetail);
+
 }
 module.exports.user_setting = router;
